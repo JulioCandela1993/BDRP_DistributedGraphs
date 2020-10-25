@@ -55,12 +55,14 @@ sudo apt install openjdk-8-jdk
 
 ```console
 
-sudo apt install openssh-server openssh-client -y
+sudo apt-get install ssh
+sudo apt-get install pdsh
 
 ```
 
 
 ## Useful Links:
 
+* https://phoenixnap.com/kb/install-hadoop-ubuntu
 * https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/
 * https://linuxconfig.org/how-to-install-hadoop-on-ubuntu-18-04-bionic-beaver-linux
