@@ -14,7 +14,7 @@ Note: You can also use Cloud providers such as Amazon or GoogleCloud to create a
 
 For this step, you can download Oracle VM VirtualBox, download the ISO of Ubuntu from the official site and follow the steps of the link ["How To Install Ubuntu 20.04 LTS On VirtualBox"](https://fossbytes.com/how-to-install-ubuntu-20-04-lts-virtualbox-windows-mac-linux/).
 
-You can install Ubunto or Linux Mint if you want a better graphic interface. Otherwise, you can install CentOS to manage everything from a terminal.
+You can install Ubunto or Linux Mint if you want a better graphic interface. Otherwise, you can install CentOS to manage everything from command line.
 
 In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following features to maximize the performance of our Hadoop server:
 
@@ -24,7 +24,7 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 * Storage: 20GB with dynamic allocation
 * Video Memory: 16 MB
 
-![3.0](img/UbuntuVM.png)
+![1.0](img/UbuntuVM.png) <!-- .element height="50%" width="50%" -->
 
 
 
