@@ -60,6 +60,33 @@ sudo apt-get install pdsh
 
 ```
 
+### 3. Create a Hadoop user
+
+The main purpose is to create a new user exclusively dedicated for running hadoop without the necessity to provide username or password. We will also store DataNode and NameNode files in this folder.
+
+* Create user hadoop to manage our environment and switch to that user
+
+```console
+sudo adduser hadoop
+su - hadoop
+```
+
+* Give permissions to the user to execute ssh without using password and username (in order to easily start hadoop service). This step needs to be executed with the new "hadoop" user
+
+```console
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+```
+
+* You can verify you have access with the following command:
+
+```console
+ssh localhost
+```
+
+<p align="center"><img src="img/ssh.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
 
 ## Useful Links:
 
