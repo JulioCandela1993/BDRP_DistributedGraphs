@@ -24,7 +24,7 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 * Storage: 20GB with dynamic allocation
 * Video Memory: 16 MB
 
-<center><img src="img/UbuntuVM.png" alt="UbuntuVM" width="70%" height="70%"></center>
+<img src="img/UbuntuVM.png" alt="UbuntuVM" width="70%" height="70%" class="center">
 
 
 
@@ -32,3 +32,8 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 
 * https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/
 * https://linuxconfig.org/how-to-install-hadoop-on-ubuntu-18-04-bionic-beaver-linux
+
+
+.center {
+  text-align: center;
+}
