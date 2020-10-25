@@ -36,7 +36,7 @@ Once our Ubuntu VM is installed, we need to install some basic utilities to work
 
 * Basic utilities
 
-```sh
+```console
 
 sudo apt update
 apt install net-tools
