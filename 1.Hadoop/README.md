@@ -24,7 +24,7 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 * Storage: 20GB with dynamic allocation
 * Video Memory: 16 MB
 
-![1.0](img/UbuntuVM.png){:height="50%" width="50%"}
+![1.0|50%](img/UbuntuVM.png){:height="50%" width="50%"}
 
 
 
