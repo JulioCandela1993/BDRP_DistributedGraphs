@@ -34,7 +34,7 @@ You can also connect by command line from Windows to your Ubuntu VM (if you are 
 
 Once our Ubuntu VM is installed, we need to install some basic utilities to work with Hadoop:
 
-* Basic utilities
+* Basic utilities after installing Ubunty from zero.
 
 ```console
 
@@ -43,8 +43,22 @@ apt install net-tools
 
 ```
 
-* Java JDK
+* Java JDK: Hadoop has been written in Java and all its services require Java packages. The new versions of hadoop 3.* supports Java 8.
+
+```console
+
+sudo apt install openjdk-8-jdk
+
+```
+
 * SSH Server and Client 
+
+```console
+
+sudo apt install openssh-server openssh-client -y
+
+```
+
 
 ## Useful Links:
 
