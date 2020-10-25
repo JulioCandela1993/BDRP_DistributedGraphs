@@ -25,6 +25,7 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 * Video Memory: 16 MB
 
 ![1.0](img/UbuntuVM.png =50%)
+<img src="img/UbuntuVM.png" alt="drawing" width="50%" height="50%"/>
 
 
 
