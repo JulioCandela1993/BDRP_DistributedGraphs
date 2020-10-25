@@ -33,7 +33,8 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 * https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/
 * https://linuxconfig.org/how-to-install-hadoop-on-ubuntu-18-04-bionic-beaver-linux
 
-
+<style>
 .center {
   text-align: center;
 }
+</style>
