@@ -26,9 +26,25 @@ In this tutorial, we have installed a VM of Ubuntu 20.04 LTS with the following 
 
 <p align="center"><img src="img/UbuntuVM.png" alt="UbuntuVM" width="70%" height="70%" class="center" ></p>
 
-You can also connect by command line from Windows to your Ubuntu VM (if you are still stubborn to work from Windows) configuring the NAT Network ports as shown in this link ["Network Settings"](https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/)
+You can also connect by command line from Windows to your Ubuntu VM (if you are still stubborn to work from Windows) configuring the NAT Network ports as shown in this link ["Network Settings"](https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/). Be aware that for Ubuntu 20, the network configuration is done by the netplan utility, so you can follow this link ["Configuring network between Host and Guest VM"](https://zhauniarovich.com/post/2020/2020-01-configuring-network/)
 
 <p align="center"><img src="img/NAT.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+### 2. Initial requirements
+
+Once our Ubuntu VM is installed, we need to install some basic utilities to work with Hadoop:
+
+* Basic utilities
+
+```sh
+
+sudo apt update
+apt install net-tools
+
+```
+
+* Java JDK
+* SSH Server and Client 
 
 ## Useful Links:
 
