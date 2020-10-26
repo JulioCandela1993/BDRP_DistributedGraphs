@@ -126,7 +126,7 @@ sudo nano ~/.bashrc
 
 >> Variables related to hadoop environment (main paths):
 
->> ```dos
+```dos
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
