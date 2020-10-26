@@ -112,7 +112,7 @@ mv hadoop-3.2.1 hadoop
 
 ### 5. Hadoop Configuration
 
-Depending on your implementation, hadoop requires to configure some files in the installation path. We will take a look at the more important files:
+Depending on your implementation, hadoop requires to configure some files in the installation path. We will take a look at the more important ones to run hadoop in single or distributed mode:
 
 ### 5.1 Environmental variables file
 
@@ -126,7 +126,7 @@ sudo nano ~/.bashrc
 
 >> Variables related to hadoop environment (main paths):
 
-```dos
+>> ```dos
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
