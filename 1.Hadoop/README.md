@@ -79,13 +79,59 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
 ```
 
-* You can verify you have access with the following command:
+* You can verify you have access with the following command from the hadoop user:
 
 ```console
 ssh localhost
 ```
 
 <p align="center"><img src="img/ssh.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+### 4. Hadoop Configuration
+
+In the next steps we are going to extract a stable version of Apache Hadoop from the official site and set up the main files to implement the Hadoop environment
+
+* Set the main location to our hadoop user folder
+
+```console
+cd /home/hadoop
+```
+
+* Extract Hadoop 3.2.1 (last stable version) from the official website
+
+```console
+wget https://apache.mediamirrors.org/hadoop/common/stable/hadoop-3.2.1.tar.gz
+```
+
+* Unzip the hadoop package and change the name (to manage hadoop easily)
+
+```console
+tar xvf hadoop-3.2.1.tar.gz
+mv hadoop-3.2.1 hadoop
+```
+
+* Set up principal environmental variables in bashrc file
+
+```console
+sudo nano ~/.bashrc
+```
+
+** Add the following variables
+
+*** Variables related to hadoop environment (main paths)
+
+```console
+export HADOOP_HOME=/usr/local/hadoop-3.2.1
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+```
+
 
 
 ## Useful Links:
