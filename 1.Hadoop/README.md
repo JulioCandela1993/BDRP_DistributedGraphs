@@ -176,9 +176,9 @@ sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
 
-#### 5.2 Configure core-site.xml file
+#### 5.3 Configure core-site.xml file
 
-This file allows to set up HDFS and Hadoop Map Reduce properties. This file resides in each note and ,specifically, we can assign the URL for the current NameNode running as well as I/O settings for HDFS and Map Reduce. Likewise, we can specify the temporal storage for map reduce operations.
+This file allows to set up HDFS and Hadoop Map Reduce properties. This file resides in each node and ,specifically, allows to identify where the namenodes are running as well as I/O settings for HDFS and Map Reduce. Likewise, we can specify the temporal storage for map reduce operations.
 
 * Open the file to edit:
 
@@ -186,7 +186,7 @@ This file allows to set up HDFS and Hadoop Map Reduce properties. This file resi
 sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-* Replace the empty configuration with: The first property modifies the temporal folder for Map Reduce operations and the second property assigns an URL to the datanode. We are going to connect to this URL when we want to write/read to our HDFS from an external environment like Java, Python and others.
+* Replace the empty configuration: The first property modifies the temporal folder for Map Reduce operations and the second property assigns an URL to the datanode. We are going to connect to this URL when we want to write/read to our HDFS from an external environment like Java, Python and others:
 
 ```dos
 <configuration>
@@ -201,7 +201,119 @@ sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 </configuration>
 ```
 
+* Create temporary folder
 
+```console
+mkdir /home/hadoop/tmpdata
+```
+
+#### 5.4 Configure hdfs-site.xml file
+
+The hdfs-site.xml file contains information related to HDFS configuration such as the NameNodes, Secondary NameNodes and DataNodes. We can configure the storage locations of node's metadata as well as the replication factor.
+
+* Open the file to edit:
+
+```console
+sudo nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+```
+
+* Replace the empty configuration: The first property sets the storage location of the namenode, the second property sets the storage location of the datanode and the last propoerty sets the replication factor (by default is 3)
+
+```dos
+<configuration>
+<property>
+  <name>dfs.data.dir</name>
+  <value>/home/hdoop/dfsdata/namenode</value>
+</property>
+<property>
+  <name>dfs.data.dir</name>
+  <value>/home/hdoop/dfsdata/datanode</value>
+</property>
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+</property>
+</configuration>
+```
+
+* Create namenode and datanode folder (the specific folder will be created when starting the service)
+
+```console
+mkdir /home/hdoop/dfsdata
+```
+
+#### 5.5 Configure mapred-site.xml file
+
+This file allows to configure Map Reduce parameters
+
+* Open the file to edit:
+
+```console
+sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
+```
+
+* Replace the empty configuration to set the Map Reduce Framework to YARN:
+
+```dos
+<configuration> 
+<property> 
+  <name>mapreduce.framework.name</name> 
+  <value>yarn</value> 
+</property> 
+</configuration>
+```
+
+#### 5.6 Configure yarn-site.xml file
+
+The files allows to configure parameters related to the Resource Manager, Node Manager, Containers and Application master
+
+* Open the file to edit:
+
+```console
+sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
+```
+
+* Replace the empty configuration with: The first two properties modify the node manager, the next one modifies the default url of the resource manager and the rest give permissions to access to the selected paths:
+
+```dos
+<configuration>
+<property>
+  <name>yarn.nodemanager.aux-services</name>
+  <value>mapreduce_shuffle</value>
+</property>
+<property>
+  <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+  <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
+<property>
+  <name>yarn.resourcemanager.hostname</name>
+  <value>127.0.0.1</value>
+</property>
+<property>
+  <name>yarn.acl.enable</name>
+  <value>0</value>
+</property>
+<property>
+  <name>yarn.nodemanager.env-whitelist</name>    <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+</property>
+</configuration>
+```
+
+#### 5.7 Configure hadoop-functions.sh file
+
+You can configure this file if you have ["sh issues"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting the service.
+
+* Open the file to edit:
+
+```console
+sudo nano $HADOOP_HOME/libexec/hadoop-functions.sh
+```
+
+* Search for variable PDSH_RCMD_TYPE and replace all the line:
+
+```dos
+PDSH_RCMD_TYPE=ssh PDSH_SSH_ARGS_APPEND="${HADOOP_SSH_OPTS}" pdsh \
+```
 
 ## Useful Links:
 
