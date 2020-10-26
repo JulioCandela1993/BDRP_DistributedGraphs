@@ -114,7 +114,7 @@ mv hadoop-3.2.1 hadoop
 
 Depending on your implementation, hadoop requires to configure some files in the installation path. We will take a look at the more important ones to run hadoop in single or distributed mode:
 
-### 5.1 Environmental variables file
+#### 5.1 Environmental variables file
 
 * Set up principal environmental variables in bashrc file
 
