@@ -160,9 +160,52 @@ export PDSH_RCMD_TYPE=ssh
 source ~/.bashrc
 ```
 
+#### 5.2 Configure hadoop-env.sh file
+
+hadoop-env.sh is like a masterfile in which you can configure different general project settings of HDFS, Map Reduce, YARN and Hadoop environment. For our purpose, we are mainly going to modify the path of JAVA. (You can check where the Java JDK has been installed in your machine):
+
+* Open the file to edit
+
+```console
+sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+```
+
+* Uncomment and complete the JAVA_HOME path
+
+```dos
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+```
+
+#### 5.2 Configure core-site.xml file
+
+This file allows to set up HDFS and Hadoop Map Reduce properties. This file resides in each note and ,specifically, we can assign the URL for the current NameNode running as well as I/O settings for HDFS and Map Reduce. Likewise, we can specify the temporal storage for map reduce operations.
+
+* Open the file to edit:
+
+```console
+sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
+```
+
+* Replace the empty configuration with: The first property modifies the temporal folder for Map Reduce operations and the second property assigns an URL to the datanode. We are going to connect to this URL when we want to write/read to our HDFS from an external environment like Java, Python and others.
+
+```dos
+<configuration>
+<property>
+  <name>hadoop.tmp.dir</name>
+  <value>/home/hadoop/tmpdata</value>
+</property>
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://127.0.0.1:9000</value>
+</property>
+</configuration>
+```
+
+
 
 ## Useful Links:
 
 * https://phoenixnap.com/kb/install-hadoop-ubuntu
 * https://en.blog.businessdecision.com/tutorial-how-to-install-a-hadoop-cluster/
 * https://linuxconfig.org/how-to-install-hadoop-on-ubuntu-18-04-bionic-beaver-linux
+* https://www.edureka.co/blog/explaining-hadoop-configuration/
