@@ -178,7 +178,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 #### 5.3 Configure core-site.xml file
 
-This file allows to set up HDFS and Hadoop Map Reduce properties. This file resides in each node and ,specifically, allows to identify where the namenodes are running as well as I/O settings for HDFS and Map Reduce. Likewise, we can specify the temporal storage for map reduce operations.
+This file allows to set up HDFS and Hadoop Map Reduce properties. This file resides in each node and ,specifically, allows to identify where the datanodes are running as well as I/O settings for HDFS and Map Reduce. Likewise, we can specify the temporal storage for map reduce operations.
 
 * Open the file to edit:
 
@@ -186,7 +186,7 @@ This file allows to set up HDFS and Hadoop Map Reduce properties. This file resi
 nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-* Replace the empty configuration: The first property modifies the temporal folder for Map Reduce operations and the second property assigns an URL to the datanode. We are going to connect to this URL when we want to write/read to our HDFS from an external environment like Java, Python and others:
+* Replace the empty configuration: The first property modifies the temporal folder for Map Reduce operations and the second property identifies an URL to the datanode. We are going to connect to this URL when we want to write/read to our HDFS from an external environment like Java, Python and others:
 
 ```dos
 <configuration>
