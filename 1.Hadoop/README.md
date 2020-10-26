@@ -116,9 +116,9 @@ mv hadoop-3.2.1 hadoop
 sudo nano ~/.bashrc
 ```
 
-> Add the following to the file:
++ Add the following to the file:
 
-	+ Variables related to hadoop environment (main paths):
+1) Variables related to hadoop environment (main paths):
 
 ```console
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
@@ -147,6 +147,13 @@ export YARN_NODEMANAGER_USER="hadoop"
 ```console
 export PDSH_RCMD_TYPE=ssh
 ```
+
++ Make the changes effective
+
+```console
+source ~/.bashrc
+```
+
 
 ## Useful Links:
 
