@@ -351,7 +351,17 @@ jps
 
 <p align="center"><img src="img/jps.png" alt="NAT" width="70%" height="70%" class="center" ></p>
 
- 
+* Access to the hadoop namenode by the browser -> http://localhost:9870
+
+<p align="center"><img src="img/namenode.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+* Access to the hadoop datanode by the browser -> http://localhost:9864
+
+<p align="center"><img src="img/datanode.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+* Access to YARN (Resource Manager) by the browser -> http://localhost:8088
+
+<p align="center"><img src="img/yarn.png" alt="NAT" width="70%" height="70%" class="center" ></p>
 
 ## Useful Links:
 
