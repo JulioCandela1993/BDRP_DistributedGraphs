@@ -116,9 +116,9 @@ mv hadoop-3.2.1 hadoop
 sudo nano ~/.bashrc
 ```
 
-Add the following to the file:
+> Add the following to the file:
 
-1) Variables related to hadoop environment (main paths)
+1) Variables related to hadoop environment (main paths):
 
 ```console
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
@@ -132,7 +132,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ```
 
-2) Variables related to the user. Otherwise you will get an error ["there is no HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined)
+2) Variables related to the user. Otherwise you will get an error ["No HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined):
 
 ```console
 export HDFS_NAMENODE_USER="hadoop"
@@ -142,7 +142,7 @@ export YARN_RESOURCEMANAGER_USER="hadoop"
 export YARN_NODEMANAGER_USER="hadoop"
 ```
 
-3) Variables to fix ssh issue when starting Apache hadoop
+3) Variables to fix ssh issue ["Connection refused"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting Apache hadoop service :
 
 ```console
 export PDSH_RCMD_TYPE=ssh
