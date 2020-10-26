@@ -118,7 +118,7 @@ sudo nano ~/.bashrc
 
 > Add the following to the file:
 
-	1) Variables related to hadoop environment (main paths):
+	+ Variables related to hadoop environment (main paths):
 
 ```console
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
@@ -132,7 +132,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ```
 
-	2) Variables related to the user. Otherwise you will get an error ["No HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined):
+2) Variables related to the user. Otherwise you will get an error ["No HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined):
 
 ```console
 export HDFS_NAMENODE_USER="hadoop"
