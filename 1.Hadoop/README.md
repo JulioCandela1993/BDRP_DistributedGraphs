@@ -294,14 +294,14 @@ sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
   <value>0</value>
 </property>
 <property>
-  <name>yarn.nodemanager.env-whitelist</name>    <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+  <name>yarn.nodemanager.env-whitelist</name>         <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
 </property>
 </configuration>
 ```
 
 #### 5.7 Configure hadoop-functions.sh file
 
-You can configure this file if you have ["sh issues"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting the service.
+You can configure this file if you have ["ssh issues"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting the service.
 
 * Open the file to edit:
 
@@ -314,6 +314,44 @@ sudo nano $HADOOP_HOME/libexec/hadoop-functions.sh
 ```dos
 PDSH_RCMD_TYPE=ssh PDSH_SSH_ARGS_APPEND="${HADOOP_SSH_OPTS}" pdsh \
 ```
+
+### 6. Start Hadoop
+
+* Format datanodes:
+
+```console
+hdfs namenode -format
+```
+
+* Locate in Hadoop executable folder
+
+```console
+cd $HADOOP_HOME/sbin
+```
+
+* Start the namenode and datanode
+
+```console
+./start-dfs.sh
+```
+
+* Start YARN
+
+```console
+./start-yarn.sh
+```
+
+* Validate all the services are running. 
+
+```console
+jps
+```
+
+* After executing this command, you should see this services running. If you don't see all of them, you may have some problems with your hdfs:
+
+<p align="center"><img src="img/jps.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+ 
 
 ## Useful Links:
 
