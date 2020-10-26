@@ -87,9 +87,9 @@ ssh localhost
 
 <p align="center"><img src="img/ssh.png" alt="NAT" width="70%" height="70%" class="center" ></p>
 
-### 4. Hadoop Configuration
+### 4. Hadoop Installation
 
-In the next steps we are going to extract a stable version of Apache Hadoop from the official site and set up the main files to implement the Hadoop environment
+In the next steps we are going to extract a stable version of Apache Hadoop from the official site. This installation is simple from Linux.
 
 * Set the main location to our hadoop user folder
 
@@ -110,15 +110,21 @@ tar xvf hadoop-3.2.1.tar.gz
 mv hadoop-3.2.1 hadoop
 ```
 
+### 5. Hadoop Configuration
+
+Depending on your implementation, hadoop requires to configure some files in the installation path. We will take a look at the more important files:
+
+### 5.1 Environmental variables file
+
 * Set up principal environmental variables in bashrc file
 
 ```console
 sudo nano ~/.bashrc
 ```
 
-+ Add the following to the file:
+* Add the following to the file:
 
-1) Variables related to hadoop environment (main paths):
+>> Variables related to hadoop environment (main paths):
 
 ```dos
 export HADOOP_HOME=/usr/local/hadoop-3.2.1
@@ -132,7 +138,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ```
 
-2) Variables related to the user. Otherwise you will get an error ["No HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined):
+>> Variables related to the user. Otherwise you will get an error ["No HDFS_NAMENODE_USER defined"](https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined):
 
 ```dos
 export HDFS_NAMENODE_USER="hadoop"
@@ -142,13 +148,13 @@ export YARN_RESOURCEMANAGER_USER="hadoop"
 export YARN_NODEMANAGER_USER="hadoop"
 ```
 
-3) Variables to fix ssh issue ["Connection refused"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting Apache hadoop service :
+>> Variables to fix ssh issue ["Connection refused"](https://stackoverflow.com/questions/48189954/hadoop-start-dfs-sh-connection-refused) when starting Apache hadoop service :
 
 ```dos
 export PDSH_RCMD_TYPE=ssh
 ```
 
-+ Make the changes effective
+* Make the changes effective
 
 ```console
 source ~/.bashrc
