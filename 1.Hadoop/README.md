@@ -367,6 +367,36 @@ jps
 
 <p align="center"><img src="img/yarn.png" alt="NAT" width="70%" height="70%" class="center" ></p>
 
+
+### 6. Play with Hadoop
+
+* Create folders inside our file system
+
+```console
+hdfs dfs -mkdir /user
+hdfs dfs -mkdir /user/bdrp
+hdfs dfs -chmod -R 777 /user/bdrp
+```
+
+* Add a file from an external source (In this example we connect with Java to the port previously specified hdfs://127.0.0.1:9000
+
+<p align="center"><img src="img/java.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+* Check for files in our HDFS
+
+```console
+hdfs dfs -ls /user/bdrp
+```
+
+<p align="center"><img src="img/ls.png" alt="NAT" width="70%" height="70%" class="center" ></p>
+
+
+* Check for the content of a specific file
+
+```console
+hdfs dfs -cat /user/bdrp/adults.100k.seq
+```
+
 ## Useful Links:
 
 * https://phoenixnap.com/kb/install-hadoop-ubuntu
