@@ -378,7 +378,7 @@ hdfs dfs -mkdir /user/bdrp
 hdfs dfs -chmod -R 777 /user/bdrp
 ```
 
-* Add a file from an external source (In this example we connect with Java to the port previously specified hdfs://127.0.0.1:9000
+* Add a file from an external source (In this example we connect with Java to the port previously specified hdfs://127.0.0.1:9000). Code extracted from a previous lab of a BDMA course
 
 <p align="center"><img src="img/java.png" alt="NAT" width="70%" height="70%" class="center" ></p>
 
