@@ -397,6 +397,13 @@ hdfs dfs -ls /user/bdrp
 hdfs dfs -cat /user/bdrp/adults.100k.seq
 ```
 
+### Set Up a 3-Node Hadoop Cluster
+
+Follow the link for more detailed:
+
+https://www.linode.com/docs/guides/how-to-install-and-set-up-hadoop-cluster/
+
+
 ## Useful Links:
 
 * https://phoenixnap.com/kb/install-hadoop-ubuntu
